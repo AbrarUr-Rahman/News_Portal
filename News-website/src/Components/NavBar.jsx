@@ -1,4 +1,4 @@
-const NavBar = () => {
+const NavBar = ({ setCategory }) => {
   return (
     <div>
       <nav
@@ -21,26 +21,40 @@ const NavBar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav" style={{ cursor: "pointer" }}>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                <div
+                  className="nav-link"
+                  onClick={() => setCategory("technology")}
+                >
+                  Technology
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
+                <div
+                  className="nav-link"
+                  onClick={() => setCategory("Business")}
+                >
+                  Business
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Pricing
-                </a>
+                <div className="nav-link" onClick={() => setCategory("Health")}>
+                  Health
+                </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">
-                  Disabled
-                </a>
+                <div className="nav-link" onClick={() => setCategory("Sports")}>
+                  Sports
+                </div>
+              </li>
+              <li className="nav-item">
+                <div
+                  className="nav-link"
+                  onClick={() => setCategory("Entertainment")}
+                >
+                  Entertainment
+                </div>
               </li>
             </ul>
           </div>

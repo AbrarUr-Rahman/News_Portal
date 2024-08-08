@@ -1,15 +1,15 @@
 // import BootStrapButtons from "./Components/BootStrapButtons";
 
+import { useState } from "react";
 import NavBar from "./Components/NavBar";
 import NewsBoard from "./Components/NewsBoard";
-import NewsItem from "./Components/NewsItem";
 
 function App() {
+  const [category, setCategory] = useState("general");
   return (
     <>
-      <NavBar></NavBar>
-      <NewsBoard></NewsBoard>
-      <NewsItem></NewsItem>
+      <NavBar setCategory={setCategory}></NavBar>
+      <NewsBoard category={category}></NewsBoard>
     </>
   );
 }
